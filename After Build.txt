@@ -1,0 +1,40 @@
+--------------------------------------------------------------------------------
+		W A R N I N G
+--------------------------------------------------------------------------------
+
+To be able to boot your new system you need to follow
+the next steps:
+
+	- Mount the virtual kernel file systems.
+
+	- Enter to the chroot using the command found
+	in the section -Entering the Chroot Environment-
+	except if building CLFS with METHOD=boot.
+
+	- Set a password for the root user.
+
+	- Edit or create /etc/fstab,
+	                 /etc/hosts,
+	                 /etc/sysconfig/clock,
+	                 /etc/sysconfig/console,
+	                 /etc/sysconfig/network,
+	                 /etc/sysconfig/ifconfig.eth0,
+	                 /etc/resolv.conf
+	and any other configuration file required to suit your needs.
+
+	- Set-up the boot loader, except if building CLFS with METHOD=boot.
+
+	You can set-up the new boot-loader installed on the new system
+	or the host bootloader.
+
+	If the last, it is better to exit first from the chroot.
+
+	- Exit from the chroot and umount the filesystems.
+
+If you are an experienced LFS user, several of those steps can be
+skipped or done in a different way. But then, that is something
+that you already know and there is no need to discuss it here.
+
+--------------------------------------------------------------------------------
+		Have a nice day :-)
+--------------------------------------------------------------------------------
