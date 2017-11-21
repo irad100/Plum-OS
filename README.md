@@ -93,8 +93,8 @@ install uhci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i uhci_hcd ; true
 # End /etc/modprobe.d/usb.conf
 EOF
 
-grub-install /dev/sda
-
+grub-install --target=i386-pc /dev/nvme0n1
+echo "kernel.printk=3" >> /etc/sysctl.conf
 cat > /boot/grub/grub.cfg << "EOF"
 # Begin /boot/grub/grub.cfg
 set default=0
