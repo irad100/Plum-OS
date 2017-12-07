@@ -8,7 +8,7 @@ Create a new Linux distrobution using the open source project Linux from Scratch
 ```
 sudo su
 apt-get update
-apt-get install make build-essential bash bison gawk m4 texinfo g++ libncurses5-dev libncursesw5-dev libxml2-utils xsltproc subversion vim
+apt-get install make build-essential bash bison gawk m4 texinfo g++ libncurses5 libncursesw5 libxml2 libxslt-dev xsltproc lynx gpm subversion openssl vim docbook-xml
 ls -al /bin/sh
 ln -sf bash /bin/sh
 export LFS=/mnt/lfs
