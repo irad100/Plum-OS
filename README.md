@@ -1,6 +1,6 @@
 # Plum-OS
 ## Main Idea
-Create a new Linux distrobution using the open source project Linux from Scratch (LFS)
+Create a new Linux distribution using the open source project Linux from Scratch (LFS)
 
 ## Setup Instructions
 
