@@ -9,12 +9,16 @@ Create a new Linux distribution using the open source project Linux from Scratch
 sudo su
 apt-get update
 apt-get install make build-essential bash bison gawk m4 texinfo g++ libncurses5 libncursesw5 libxml2 libxml2-utils libxslt-dev xsltproc lynx gpm subversion openssl vim docbook-xml
-ls -al /bin/sh
 ln -sf bash /bin/sh
+mkfs -v -t ext2 /dev/sd?1
+mkfs -v -t ext4 /dev/sd?2
+mkswap /dev/sd?3
 export LFS=/mnt/lfs
-mkfs -v -t ext4 /dev/sdb
 mkdir -pv $LFS
-mount -v -t ext4 /dev/sdb $LFS
+mount -v -t ext4 /dev/sd?2 $LFS
+mkdir -pv $LFS/boot
+mount -v -t ext4 /dev/sd?1 $LFS/boot
+
 useradd jhalfs_user
 visudo ---> jhalfs_user ALL=(ALL) NOPASSWD:ALL
 chown -v jhalfs_user $LFS
