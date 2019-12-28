@@ -121,3 +121,22 @@ umount -v $LFS/sys
 umount -v $LFS
 shutdown -r now
 ```
+### Mount
+export LFS=/mnt/lfs
+sudo mount -v -t ext4 /dev/sdc2 $LFS
+sudo mount -v -t ext4 /dev/sdc1 $LFS/boot
+sudo mount -v --bind /dev $LFS/dev
+sudo mount -vt devpts devpts $LFS/dev/pts -o gid=5,mode=620
+sudo mount -vt proc proc $LFS/proc
+sudo mount -vt sysfs sysfs $LFS/sys
+sudo mount -vt tmpfs tmpfs $LFS/run
+
+### Unmount
+export LFS=/mnt/lfs
+sudo umount -v $LFS/dev/pts
+sudo umount -v $LFS/dev
+sudo umount -v $LFS/run
+sudo umount -v $LFS/proc
+sudo umount -v $LFS/sys
+sudo umount -v $LFS/boot
+sudo umount -v $LFS
