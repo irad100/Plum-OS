@@ -148,11 +148,11 @@ chroot "$LFS" /tools/bin/env -i \
 ### Unmount
 ```
 export LFS=/mnt/lfs
-sudo umount -v $LFS/dev/pts
-sudo umount -v $LFS/dev
-sudo umount -v $LFS/run
-sudo umount -v $LFS/proc
-sudo umount -v $LFS/sys
-sudo umount -v $LFS/boot
-sudo umount -v $LFS
+umount -v $LFS/dev/pts
+umount -v $LFS/dev
+umount -v $LFS/run
+umount -v $LFS/proc
+umount -v $LFS/sys
+umount -v $LFS/boot
+umount -v $LFS
 ```
