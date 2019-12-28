@@ -130,14 +130,14 @@ shutdown -r now
 ### Mount
 ```
 export LFS=/mnt/lfs
-sudo mount -v -t ext4 /dev/sdc2 $LFS
-sudo mount -v -t ext4 /dev/sdc1 $LFS/boot
-sudo mount -v --bind /dev $LFS/dev
-sudo mount -vt devpts devpts $LFS/dev/pts -o gid=5,mode=620
-sudo mount -vt proc proc $LFS/proc
-sudo mount -vt sysfs sysfs $LFS/sys
-sudo mount -vt tmpfs tmpfs $LFS/run
-sudo chroot "$LFS" /tools/bin/env -i \
+mount -v -t ext4 /dev/sdc2 $LFS
+mount -v -t ext4 /dev/sdc1 $LFS/boot
+mount -v --bind /dev $LFS/dev
+mount -vt devpts devpts $LFS/dev/pts -o gid=5,mode=620
+mount -vt proc proc $LFS/proc
+mount -vt sysfs sysfs $LFS/sys
+mount -vt tmpfs tmpfs $LFS/run
+chroot "$LFS" /tools/bin/env -i \
     HOME=/root                  \
     TERM="$TERM"                \
     PS1='(lfs chroot) \u:\w\$ ' \
